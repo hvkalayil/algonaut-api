@@ -28,6 +28,7 @@ jobs:
       - name: Push dir to Git
         uses: liziwl/git-push-action@v1.0.4
         with:
+          git_token_holder: hvkalayil
           git_token: ${{ secrets.GIT_TOKEN }}
           push_dir: ./dist
           commit_user: action@github.com
