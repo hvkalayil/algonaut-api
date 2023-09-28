@@ -19,9 +19,10 @@ jobs:
       - name: Build 🏗️
         run: npm run build
 
-      - name: Upload Build
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: build
+      - name: Git Push Action For Coding Page
+        uses: AnonyStar/git-push@v2
+        env:
+          GITHUB_EMAIL: "action@github.com"
+          GITHUB_USERNAME: "Github Action"
+          PUBLISH_BRANCH: build
+          PUBLISH_DIR: ./build
