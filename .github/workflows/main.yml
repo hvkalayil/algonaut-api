@@ -22,10 +22,14 @@ jobs:
       - name: Build 🏗️
         run: npm run build
 
-      - name: Git Push Action For Coding Page
-        uses: AnonyStar/git-push@v2
-        env:
-          GITHUB_EMAIL: "action@github.com"
-          GITHUB_USERNAME: "Github Action"
-          PUBLISH_BRANCH: build
-          PUBLISH_DIR: ./build
+      - name: Checking build
+        run: ls
+
+      - name: Push dir to Git
+        uses: liziwl/git-push-action@v1.0.4
+        with:
+          git_token: ${{ secrets.GIT_TOKEN }}
+          push_dir: ./dist
+          commit_user: action@github.com
+          commit_email: Github Actions
+          branch: build
