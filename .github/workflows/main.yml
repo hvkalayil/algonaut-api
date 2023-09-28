@@ -1,4 +1,4 @@
-name: Build Artifcats
+name: Build Artifacts
 
 on:
   pull_request:
