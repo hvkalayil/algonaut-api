@@ -30,6 +30,7 @@ jobs:
         with:
           git_token_holder: 'hvkalayil'
           git_token: '${{ secrets.GITHUB_TOKEN }}'
+          repository_url: 'github.com/hvkalayil/algonaut-api.git'
           push_dir: 'dist'
           commit_user: 'action@github.com'
           commit_email: 'Github Actions'
