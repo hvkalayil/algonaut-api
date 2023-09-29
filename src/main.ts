@@ -6,6 +6,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule,{
     logger: ['error', 'warn', 'log', 'debug'],
   });
+  app.enableCors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  });
 
   const options = new DocumentBuilder()
     .setTitle('Algonaut API')
