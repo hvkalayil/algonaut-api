@@ -17,7 +17,6 @@ export class AlgorithmService {
   }
 
   findAll() {
-    this.logger.debug('Show Me dammit')
     return this.algorithmModel.find().exec()
   }
 

@@ -2,8 +2,7 @@ import { Logger, Module } from '@nestjs/common';
 import { AlgorithmModule } from './algorithm/algorithm.module';
 import { MongooseModule } from '@nestjs/mongoose';
 
-// const secret = `${process.env.DB_USER}:${process.env.DB_PSWD}`
-const secret = 'hvk:MfEN1kO0XFoJlpaE'
+const secret = `${process.env.DB_USER}:${process.env.DB_PSWD}`
 
 @Module({
   imports: [
