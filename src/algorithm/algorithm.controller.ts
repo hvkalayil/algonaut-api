@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, Logger } from '@nest
 import { AlgorithmService } from './algorithm.service';
 import { CreateAlgorithmDto } from './dto/create-algorithm.dto';
 import { UpdateAlgorithmDto } from './dto/update-algorithm.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Algorithm')
 @Controller('algorithm')
 export class AlgorithmController {
   constructor(private readonly algorithmService: AlgorithmService) {}

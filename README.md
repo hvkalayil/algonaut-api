@@ -1,10 +1,7 @@
 # Algonaut API
 
 ## Description
-This utilizes github actions to build the artifacts using node and then push it to the build branch.
-Render takes over afterwards and run node main.js and host the API
 
+This utilizes Render to deploy and run the API service. The API can be found at [here](https://algonaut-api.onrender.com/algorithm)
 
-## API Endpoints
-
-API Endpoints for algonaut application
+Goto [/api](https://algonaut-api.onrender.com/api) for the swagger documentation for the API/
