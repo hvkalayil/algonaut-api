@@ -1,4 +1,4 @@
-name: Build Artifcats
+name: Build Artifacts
 
 on:
   pull_request:
@@ -13,15 +13,25 @@ jobs:
       - name: Checkout code ✅
         uses: actions/checkout@v3.5.3
 
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.8.1
+
       - name: Install dependencies 🔧
         run: npm install
       
       - name: Build 🏗️
         run: npm run build
 
-      - name: Upload Build
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Checking build
+        run: ls
+
+      - name: Push dir to Git
+        uses: liziwl/git-push-action@v1.0.4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: build
+          git_token_holder: 'hvkalayil'
+          git_token: '${{ secrets.GITHUB_TOKEN }}'
+          repository_url: 'github.com/hvkalayil/algonaut-api.git'
+          push_dir: 'dist'
+          commit_user: 'hvkalayil'
+          commit_email: 'hoseakalayil@gmail.com'
+          branch: 'build'
